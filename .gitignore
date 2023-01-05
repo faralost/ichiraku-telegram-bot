@@ -14,3 +14,4 @@ settings_local.py
 .env.prod
 media
 pickle_db
+.pytest_cashe

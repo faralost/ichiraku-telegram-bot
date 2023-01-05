@@ -1,0 +1,7 @@
+aioschedule==0.5.2
+python-dotenv==0.21.0
+httpx==0.23.1
+mtranslate==1.8
+aiogram==2.24
+pytest==7.2.0
+pytz==2022.7
