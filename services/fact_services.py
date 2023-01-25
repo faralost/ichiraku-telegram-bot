@@ -1,0 +1,16 @@
+from mtranslate import translate
+
+from errors.error_messages import ERROR_MESSAGES_RU
+from errors.errors import NinjasError
+from external_services.api_ninjas_fact import get_fact
+
+
+async def collect_fact():
+    try:
+        fact = await get_fact()
+        translation = translate(fact, 'ru', 'en')
+        return '\n\n'.join([f'<b>{fact}</b>', f'<i>{translation}</i>'])
+    except NinjasError:
+        return ERROR_MESSAGES_RU['fact_error']
+
+

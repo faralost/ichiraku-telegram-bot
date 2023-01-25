@@ -27,8 +27,8 @@ async def main():
     bot: Bot = Bot(token=config.BOT_API_TOKEN, parse_mode='HTML')
     dp: Dispatcher = Dispatcher(bot)
 
-    register_all_handlers(dp)
     await set_main_menu(dp)
+    register_all_handlers(dp)
 
     try:
         await dp.start_polling()

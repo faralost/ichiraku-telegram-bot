@@ -1,0 +1,2 @@
+class NinjasError(Exception):
+    pass
