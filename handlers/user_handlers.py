@@ -1,6 +1,7 @@
 from aiogram import Dispatcher
 from aiogram.types import Message, CallbackQuery
 
+from database.database import ALL_CHATS, add_chat_to_all_chats_db, update_all_chats_db
 from keyboards.keyboards import keyboard
 from lexicon.lexicon_ru import LEXICON_RU
 from services.fact_services import collect_fact
@@ -8,6 +9,8 @@ from services.fact_services import collect_fact
 
 async def process_start_command(message: Message):
     await message.reply(text=LEXICON_RU['start'])
+    add_chat_to_all_chats_db(message.chat.id)
+    update_all_chats_db(ALL_CHATS)
 
 
 async def process_help_command(message: Message):
