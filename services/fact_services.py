@@ -9,7 +9,9 @@ async def collect_fact():
     try:
         fact = await get_fact()
         translation = translate(fact, 'ru', 'en')
-        return '\n\n'.join([f'<b>{fact}</b>', f'<i>{translation}</i>'])
+        if translation:
+            return '\n\n'.join([f'<b>{fact}</b>', f'<i>{translation}</i>'])
+        return f'<b>{fact}</b>'
     except NinjasError:
         return ERROR_MESSAGES_RU['fact_error']
 

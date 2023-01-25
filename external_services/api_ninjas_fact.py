@@ -15,5 +15,5 @@ async def get_fact() -> str:
                 return response.json()[0]['fact']
             raise NinjasError
         except httpx.RequestError as e:
-            logging.error(e)
+            logging.error('', e)
             raise NinjasError
