@@ -15,3 +15,4 @@ settings_local.py
 media
 pickle_db
 .pytest_cashe
+pickle_game_db

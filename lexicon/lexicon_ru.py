@@ -1,6 +1,8 @@
 import random
 from typing import TypedDict
 
+from services.game_services import ATTEMPTS
+
 EMOJIS = ('🌞', '🌝', '🌼', '🌷', '🥰', '😇', '🌻', '🌸', '🍀', '☀️', '🍳', '☕️',)
 
 
@@ -22,6 +24,13 @@ class Lexicon(TypedDict):
     good_morning: str
     todays_weather: str
     birthday_text: str
+    game: str
+    not_in_game: str
+    games_played: str
+    game_wins: str
+    game_losses: str
+    player: str
+    stat: str
 
 
 LEXICON_RU: Lexicon = {
@@ -52,5 +61,19 @@ LEXICON_RU: Lexicon = {
     'good_morning': f'<b>Доброе утро! Отличного Вам дня!</b>{random.choice(EMOJIS)}\n\n',
     'todays_weather': "🌍<i>Погода на сегодня</i>🌏\n\n",
     'birthday_text': f"<b>УРА! ПОЗДРАВЛЯЮ!🥳\n\n"
-                     f"Сегодня день рождения у...</b>🥁(<i>барабанная дробь...</i>)\n\n"
+                     f"Сегодня день рождения у...</b>🥁(<i>барабанная дробь...</i>)\n\n",
+    'game': f'<b>Правила игры:</b>\n\n'
+            f'Я загадываю число от <b>1</b> до <b>100</b>, а вам нужно его угадать\n'
+            f'У вас есть <b>{ATTEMPTS}</b> попыток\n\n'
+            f'Доступные команды в игре:\n'
+            f'/cancel - выйти из игры\n'
+            f'/stat - посмотреть вашу статистику\n'
+            f'/stats - посмотреть общую статистику\n\n'
+            f'<i>Давай сыграем? Напиши "Давай", "Игра" или "Го" и сразу начнем</i>🎰',
+    'not_in_game': 'Вы еще не зарегистрированы в игре😔 Нажмите /game',
+    'games_played': '<i>🙌Всего игр</i>',
+    'game_wins': '<i>👍Выиграно</i>',
+    'game_losses': '<i>👎Проиграно</i>',
+    'player': '<b>Игрок</b>',
+    'stat': '📊<b>Статистика</b>📊'
 }

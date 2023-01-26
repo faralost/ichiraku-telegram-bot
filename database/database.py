@@ -1,6 +1,5 @@
 import pickle
 
-
 BIRTHDAYS = {
     '03-01': 'Сайкал',
     '17-01': 'Карина',
@@ -18,6 +17,14 @@ BIRTHDAYS = {
 with open('database/pickle_db', 'rb') as file:
     ALL_CHATS: set[int] = pickle.load(file)
 
+with open('database/pickle_game_db', 'rb') as file:
+    GAME_USERS: dict = pickle.load(file)
+
+
+def update_game_users_db(users: dict) -> None:
+    with open('database/pickle_game_db', 'wb') as f:
+        pickle.dump(users, f)
+
 
 def add_chat_to_all_chats_db(chat_id: int) -> None:
     ALL_CHATS.add(chat_id)
@@ -26,4 +33,3 @@ def add_chat_to_all_chats_db(chat_id: int) -> None:
 def update_all_chats_db(chats: set[int]) -> None:
     with open('database/pickle_db', 'wb') as f:
         pickle.dump(chats, f)
-

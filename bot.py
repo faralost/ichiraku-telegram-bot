@@ -4,6 +4,7 @@ import logging
 from aiogram import Bot, Dispatcher, executor
 
 from config_data import config
+from handlers.game_handlers import register_game_handlers
 from handlers.scheduled_tasks import scheduler
 from handlers.user_handlers import register_user_handlers
 from handlers.other_handlers import register_other_handlers
@@ -18,6 +19,7 @@ logging.basicConfig(
 
 def register_all_handlers(dp: Dispatcher) -> None:
     register_user_handlers(dp)
+    register_game_handlers(dp)
     register_other_handlers(dp)
 
 
