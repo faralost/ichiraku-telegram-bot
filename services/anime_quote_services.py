@@ -6,6 +6,7 @@ from mtranslate import translate
 from errors.error_messages import ERROR_MESSAGES_RU
 from errors.errors import AnimechanAPIError
 from external_services.animechan_quote import get_anime_quote
+from lexicon.lexicon_ru import LEXICON_RU
 
 TOP_ANIMES = (
     'naruto',
@@ -50,8 +51,8 @@ async def collect_quote(anime_title: str):
 
 
 def get_quote_text(quote: AnimeQuote) -> str:
-    text = f'Anime: <b>{quote.anime}</b>\n'
-    text += f'Character: <b>{quote.character} ©</b>\n\n'
+    text = f'{LEXICON_RU["anime"]}: <b>{quote.anime}</b>\n'
+    text += f'{LEXICON_RU["character"]}: <b>{quote.character} ©</b>\n\n'
     text += f'- <b>"{quote.quote}"</b>'
     return text
 

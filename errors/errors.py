@@ -4,3 +4,7 @@ class NinjasAPIError(Exception):
 
 class AnimechanAPIError(Exception):
     pass
+
+
+class OpenWeatherAPIError(Exception):
+    pass

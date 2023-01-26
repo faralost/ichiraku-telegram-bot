@@ -7,7 +7,7 @@ from aiogram.utils.exceptions import Unauthorized, BadRequest
 from database.database import update_all_chats_db
 
 
-async def send_to_all_chats(chats: set[id], bot: Bot, text: str, reply_markup: InlineKeyboardMarkup):
+async def send_to_all_chats(chats: set[id], bot: Bot, text: str, reply_markup: InlineKeyboardMarkup = None):
     for chat_id in chats.copy():
         try:
             await bot.send_message(chat_id, text, reply_markup=reply_markup)

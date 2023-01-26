@@ -25,7 +25,7 @@ async def on_startup(dp: Dispatcher):
     logger.info('Starting bot...')
     await set_main_menu(dp)
     register_all_handlers(dp)
-    asyncio.create_task(scheduler())
+    asyncio.create_task(scheduler(bot))
 
 
 if __name__ == '__main__':
