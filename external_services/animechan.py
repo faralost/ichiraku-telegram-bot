@@ -1,11 +1,12 @@
+import logging
 import random
 from dataclasses import dataclass
 
+import httpx
 from mtranslate import translate
 
 from errors.error_messages import ERROR_MESSAGES_RU
 from errors.errors import AnimechanAPIError
-from external_services.animechan_quote import get_anime_quote
 from lexicon.lexicon_ru import LEXICON_RU
 
 TOP_ANIMES = (
@@ -28,6 +29,19 @@ class AnimeQuote:
     anime: str
     character: str
     quote: str
+
+
+async def get_anime_quote(anime_title: str) -> dict[str, str]:
+    url = f'https://animechan.vercel.app/api/random/anime?title={anime_title}'
+    async with httpx.AsyncClient() as client:
+        try:
+            response = await client.get(url)
+            if response.status_code == httpx.codes.OK:
+                return response.json()
+            raise AnimechanAPIError
+        except httpx.RequestError as e:
+            logging.error(e)
+            raise AnimechanAPIError
 
 
 async def parse_anime_quote(anime_quote: dict[str, str]) -> AnimeQuote:

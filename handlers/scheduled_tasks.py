@@ -7,11 +7,11 @@ from pytz import timezone
 
 from config_data.config import ICHIRAKU_CHAT_ID
 from database.database import ALL_CHATS, BIRTHDAYS
+from external_services.animechan import collect_quote, get_random_anime, TOP_ANIMES
+from external_services.api_ninjas import collect_fact
+from external_services.openweather import collect_weather
 from keyboards.keyboards import fact_keyboard, quote_keyboard
 from lexicon.lexicon_ru import LEXICON_RU
-from services.anime_quote_services import collect_quote, TOP_ANIMES, get_random_anime
-from services.fact_services import collect_fact
-from services.openweather_services import collect_weather
 from services.services import send_to_all_chats, get_birthday_text
 
 

@@ -12,13 +12,7 @@ from services.game_services import (
     enter_the_game,
     set_random_number_for_user,
     set_user_attempts,
-    increment_total_games,
-    increment_wins,
-    recalculate_win_rate,
-    decrement_attempts,
-    get_user_attempts,
-    get_random_number_of_user,
-    increment_losses, process_the_game,
+    process_the_game,
 )
 
 
