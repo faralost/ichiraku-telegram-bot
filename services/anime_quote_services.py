@@ -1,3 +1,4 @@
+import random
 from dataclasses import dataclass
 
 from mtranslate import translate
@@ -5,6 +6,20 @@ from mtranslate import translate
 from errors.error_messages import ERROR_MESSAGES_RU
 from errors.errors import AnimechanAPIError
 from external_services.animechan_quote import get_anime_quote
+
+TOP_ANIMES = (
+    'naruto',
+    'jujutsu',
+    'attack',
+    'slayer',
+    'haikyu',
+    'note',
+    'hunter',
+    'evangelion',
+    'brotherhood',
+    'jojo',
+    'punch',
+)
 
 
 @dataclass
@@ -39,3 +54,7 @@ def get_quote_text(quote: AnimeQuote) -> str:
     text += f'Character: <b>{quote.character} ©</b>\n\n'
     text += f'- <b>"{quote.quote}"</b>'
     return text
+
+
+def get_random_anime(animes: tuple[str]):
+    return random.choice(animes)

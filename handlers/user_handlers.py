@@ -4,7 +4,7 @@ from aiogram.types import Message, CallbackQuery
 from database.database import ALL_CHATS, add_chat_to_all_chats_db, update_all_chats_db
 from keyboards.keyboards import fact_keyboard, quote_keyboard
 from lexicon.lexicon_ru import LEXICON_RU
-from services.anime_quote_services import collect_quote
+from services.anime_quote_services import collect_quote, get_random_anime, TOP_ANIMES
 from services.fact_services import collect_fact
 
 
@@ -32,13 +32,13 @@ async def process_more_fact_press(callback: CallbackQuery):
 
 async def process_quote_command(message: Message):
     await message.answer_chat_action('typing')
-    quote = await collect_quote('naruto')
+    quote = await collect_quote(get_random_anime(TOP_ANIMES))
     await message.reply(text=quote, reply_markup=quote_keyboard)
 
 
 async def process_more_quote_press(callback: CallbackQuery):
     await callback.answer()
-    quote = await collect_quote('naruto')
+    quote = await collect_quote(get_random_anime(TOP_ANIMES))
     await callback.message.reply(text=quote, reply_markup=quote_keyboard)
 
 
