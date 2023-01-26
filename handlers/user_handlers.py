@@ -12,6 +12,7 @@ async def process_start_command(message: Message):
     await message.reply(text=LEXICON_RU['start'])
     add_chat_to_all_chats_db(message.chat.id)
     update_all_chats_db(ALL_CHATS)
+    print(ALL_CHATS)
 
 
 async def process_help_command(message: Message):

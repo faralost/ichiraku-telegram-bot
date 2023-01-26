@@ -90,17 +90,17 @@ async def parse_openweather(openweather: dict) -> OpenWeather:
     )
 
 
-async def get_weather_text(lat: float, lon: float):
+async def get_weather_text(lat: float, lon: float) -> str:
     openweather_response = await get_openweather(lat=lat, lon=lon)
     parsed_weather = await parse_openweather(openweather_response)
     text = f'<b>{LEXICON_RU[parsed_weather.timezone]}</b>\n' \
-           f'{LEXICON_RU["min_temp"]}:{parsed_weather.min_temp}°, ' \
+           f'{LEXICON_RU["min_temp"]}: {parsed_weather.min_temp}°, ' \
            f'{LEXICON_RU["max_temp"]}: {parsed_weather.max_temp}°, ' \
            f'{parsed_weather.description}{WEATHER_ID_EMOJIS[parsed_weather.weather_id]}\n\n'
     return text
 
 
-async def collect_weather():
+async def collect_weather() -> str:
     try:
         collected_weather = ''
         for city in CITIES:

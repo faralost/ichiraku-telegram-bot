@@ -21,6 +21,7 @@ class Lexicon(TypedDict):
     max_temp: str
     good_morning: str
     todays_weather: str
+    birthday_text: str
 
 
 LEXICON_RU: Lexicon = {
@@ -49,5 +50,7 @@ LEXICON_RU: Lexicon = {
     'min_temp': "Мин",
     'max_temp': "Макс",
     'good_morning': f'<b>Доброе утро! Отличного Вам дня!</b>{random.choice(EMOJIS)}\n\n',
-    'todays_weather': "🌍<i>Погода на сегодня</i>🌏\n\n"
+    'todays_weather': "🌍<i>Погода на сегодня</i>🌏\n\n",
+    'birthday_text': f"<b>УРА! ПОЗДРАВЛЯЮ!🥳\n\n"
+                     f"Сегодня день рождения у...</b>🥁(<i>барабанная дробь...</i>)\n\n"
 }
