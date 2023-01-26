@@ -3,7 +3,7 @@ from aiogram.types import Message
 
 from database.database import GAME_USERS
 from lexicon.lexicon_ru import LEXICON_RU
-from services.game_services import get_stat_text
+from services.game_services import get_stat_text, sort_by_win_rate, get_stats_text
 
 
 async def process_game_command(message: Message):
@@ -28,6 +28,12 @@ async def process_stat_command(message: Message):
         await message.reply(text=get_stat_text(message.from_user.id))
 
 
+async def process_stats_command(message: Message):
+    sorted_by_win_rate = sort_by_win_rate(GAME_USERS)
+    await message.reply(text=get_stats_text(sorted_by_win_rate))
+
+
 def register_game_handlers(dp: Dispatcher):
     dp.register_message_handler(process_game_command, commands='game')
     dp.register_message_handler(process_stat_command, commands='stat')
+    dp.register_message_handler(process_stats_command, commands='stats')

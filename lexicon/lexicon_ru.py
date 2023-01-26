@@ -31,6 +31,13 @@ class Lexicon(TypedDict):
     game_losses: str
     player: str
     stat: str
+    stats: str
+    start_menu: str
+    help_menu: str
+    fact_menu: str
+    quote_menu: str
+    game_menu: str
+    stat_menu: str
 
 
 LEXICON_RU: Lexicon = {
@@ -75,5 +82,12 @@ LEXICON_RU: Lexicon = {
     'game_wins': '<i>👍Выиграно</i>',
     'game_losses': '<i>👎Проиграно</i>',
     'player': '<b>Игрок</b>',
-    'stat': '📊<b>Статистика</b>📊'
+    'stat': '📊<b>Статистика</b>📊',
+    'stats': '📊<b>Статистика</b>📊',
+    'start_menu': 'Старт/Рестарт бота',
+    'help_menu': 'Помощь',
+    'fact_menu': 'Рандомный факт',
+    'quote_menu': 'Цитата из Aниме',
+    'game_menu': 'Угадай Число',
+    'stat_menu': 'Ваша Статистика',
 }
