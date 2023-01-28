@@ -71,5 +71,5 @@ def get_quote_text(quote: AnimeQuote) -> str:
     return text
 
 
-def get_random_anime(animes: tuple[str]):
+def get_random_anime(animes: tuple[str, ...]):
     return random.choice(animes)

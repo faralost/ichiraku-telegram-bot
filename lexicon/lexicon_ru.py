@@ -16,9 +16,6 @@ class Lexicon(TypedDict):
     fact_of_the_day: str
     anime: str
     character: str
-    asia_bishkek: str
-    asia_almaty: str
-    asia_novosibirsk: str
     min_temp: str
     max_temp: str
     good_morning: str
@@ -75,9 +72,6 @@ LEXICON_RU: Lexicon = {
     'fact_of_the_day': "*Рандомный факт дня* 📰\n\n",
     'anime': "Аниме",
     'character': "Персонаж",
-    'Asia/Bishkek': "Бишкек",
-    'Asia/Almaty': "Алматы",
-    'Asia/Novosibirsk': "Новосибирск",
     'min_temp': "Мин",
     'max_temp': "Макс",
     'good_morning': f'<b>Доброе утро! Отличного Вам дня!</b>{random.choice(EMOJIS)}\n\n',
@@ -130,4 +124,10 @@ LEXICON_RU: Lexicon = {
     'sakura_caption': 'Бэнг! Бэнг! Бэнг! Сакура в здании!😺',
     'kakura_caption': 'Бэнг! Бэнг! Бэнг! Kакура в здании!😽',
     'wedding_caption': 'Какой прекрасный день!💃🕺',
+}
+
+LEXICON_RU_CITIES = {
+    'Asia/Bishkek': "Бишкек",
+    'Asia/Almaty': "Алматы",
+    'Asia/Novosibirsk': "Новосибирск",
 }

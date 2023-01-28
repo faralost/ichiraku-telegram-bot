@@ -9,3 +9,4 @@ openai==0.26.3
 imagekitio==3.0.1
 pytest-asyncio==0.20.3
 pytest-mock==3.10.0
+mypy==0.991

@@ -7,7 +7,7 @@ import httpx
 from config_data import config
 from errors.error_messages import ERROR_MESSAGES_RU
 from errors.errors import OpenWeatherAPIError
-from lexicon.lexicon_ru import LEXICON_RU
+from lexicon.lexicon_ru import LEXICON_RU, LEXICON_RU_CITIES
 
 CITIES = {
     'bishkek': {'lat': 42.882004, 'lon': 74.582748},
@@ -116,7 +116,7 @@ async def parse_openweather(openweather: dict) -> OpenWeather:
 async def get_weather_text(lat: float, lon: float) -> str:
     openweather_response = await get_openweather(lat=lat, lon=lon)
     parsed_weather = await parse_openweather(openweather_response)
-    text = f'<b>{LEXICON_RU[parsed_weather.timezone]}</b>\n' \
+    text = f'<b>{LEXICON_RU_CITIES[parsed_weather.timezone]}</b>\n' \
            f'{LEXICON_RU["min_temp"]}: {parsed_weather.min_temp}°, ' \
            f'{LEXICON_RU["max_temp"]}: {parsed_weather.max_temp}°, ' \
            f'{parsed_weather.description}{WEATHER_ID_EMOJIS[parsed_weather.weather_id]}\n\n'
