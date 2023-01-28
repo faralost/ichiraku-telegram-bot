@@ -123,6 +123,7 @@ LEXICON_RU: Lexicon = {
     'sakura_caption': 'Бэнг! Бэнг! Бэнг! Сакура в здании!😺',
     'kakura_caption': 'Бэнг! Бэнг! Бэнг! Kакура в здании!😽',
     'wedding_caption': 'Какой прекрасный день!💃🕺',
+    'test': 'тест',
 }
 
 LEXICON_RU_CITIES = {
