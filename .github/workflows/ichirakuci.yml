@@ -34,5 +34,7 @@ jobs:
     - name: Test with pytest
       env:
         API_NINJAS_KEY: ${{ secrets.API_NINJAS_KEY  }}
+        IMAGEKIT_PRIVATE_KEY: ${{ secrets.IMAGEKIT_PRIVATE_KEY  }}
+        IMAGEKIT_PUBLIC_KEY: ${{ secrets.IMAGEKIT_PUBLIC_KEY  }}
       run: |
         pytest
