@@ -70,6 +70,40 @@ async def process_more_sakura_press(callback: CallbackQuery):
     )
 
 
+async def process_kakura_command(message: Message):
+    await message.reply_photo(
+        f'{get_random_photo_url("kakura")}',
+        caption=LEXICON_RU['kakura_caption'],
+        reply_markup=photos_keyboard
+    )
+
+
+async def process_more_kakura_press(callback: CallbackQuery):
+    await callback.answer()
+    await callback.message.reply_photo(
+        f'{get_random_photo_url("kakura")}',
+        caption=LEXICON_RU['kakura_caption'],
+        reply_markup=photos_keyboard
+    )
+
+
+async def process_wedding_command(message: Message):
+    await message.reply_photo(
+        f'{get_random_photo_url("wedding")}',
+        caption=LEXICON_RU['wedding_caption'],
+        reply_markup=photos_keyboard
+    )
+
+
+async def process_more_wedding_press(callback: CallbackQuery):
+    await callback.answer()
+    await callback.message.reply_photo(
+        f'{get_random_photo_url("wedding")}',
+        caption=LEXICON_RU['wedding_caption'],
+        reply_markup=photos_keyboard
+    )
+
+
 def register_user_handlers(dp: Dispatcher):
     dp.register_message_handler(process_start_command, commands='start')
     dp.register_message_handler(process_help_command, commands='help')
@@ -80,3 +114,7 @@ def register_user_handlers(dp: Dispatcher):
     dp.register_message_handler(process_chat_gpt_command, Text(startswith=['gpt', 'chatgpt'], ignore_case=True))
     dp.register_message_handler(process_sakura_command, commands='sakura')
     dp.register_callback_query_handler(process_more_sakura_press, text='more_sakura')
+    dp.register_message_handler(process_kakura_command, commands='kakura')
+    dp.register_callback_query_handler(process_more_kakura_press, text='more_kakura')
+    dp.register_message_handler(process_wedding_command, commands='wedding')
+    dp.register_callback_query_handler(process_more_wedding_press, text='more_wedding')

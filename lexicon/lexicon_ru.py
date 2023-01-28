@@ -49,8 +49,10 @@ class Lexicon(TypedDict):
     lose_the_game: str
     sakura: str
     sakura_caption: str
+    kakura_caption: str
     kakura: str
     wedding: str
+    wedding_caption: str
 
 
 LEXICON_RU: Lexicon = {
@@ -126,4 +128,6 @@ LEXICON_RU: Lexicon = {
                      f'/stats - Общая статистика📊\n\n'
                      f'<b>Мое число было</b> ',
     'sakura_caption': 'Бэнг! Бэнг! Бэнг! Сакура в здании!😺',
+    'kakura_caption': 'Бэнг! Бэнг! Бэнг! Kакура в здании!😽',
+    'wedding_caption': 'Какой прекрасный день!💃🕺',
 }
