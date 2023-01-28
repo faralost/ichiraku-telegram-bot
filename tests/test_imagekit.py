@@ -1,4 +1,3 @@
-import pytest
 from unittest.mock import MagicMock, patch
 
 from external_services.imagekit import get_file_urls_from_folder, get_random_photo_url

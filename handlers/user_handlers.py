@@ -1,4 +1,3 @@
-import openai
 from aiogram import Dispatcher
 from aiogram.dispatcher.filters import Text
 from aiogram.types import Message, CallbackQuery
