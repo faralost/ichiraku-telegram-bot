@@ -1,7 +1,6 @@
 import random
 from typing import TypedDict
 
-from services.game_services import ATTEMPTS
 
 EMOJIS = ('🌞', '🌝', '🌼', '🌷', '🥰', '😇', '🌻', '🌸', '🍀', '☀️', '🍳', '☕️',)
 
@@ -80,7 +79,7 @@ LEXICON_RU: Lexicon = {
                      "Сегодня день рождения у...</b>🥁(<i>барабанная дробь...</i>)\n\n",
     'game': f'<b>Правила игры:</b>\n\n'
             f'Я загадываю число от <b>1</b> до <b>100</b>, а вам нужно его угадать🤔\n'
-            f'У вас есть <b>{ATTEMPTS}</b> попыток\n\n'
+            f'У вас есть <b>5</b> попыток\n\n'
             f'Доступные команды в игре:\n'
             f'/cancel - выйти из игры❌\n'
             f'/stat - Ваша статистика📊\n'
