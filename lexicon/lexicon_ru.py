@@ -49,6 +49,7 @@ class Lexicon(TypedDict):
     kakura: str
     wedding: str
     wedding_caption: str
+    test: str
 
 
 LEXICON_RU: Lexicon = {
