@@ -47,6 +47,10 @@ class Lexicon(TypedDict):
     number_is_smaller: str
     number_is_bigger: str
     lose_the_game: str
+    sakura: str
+    sakura_caption: str
+    kakura: str
+    wedding: str
 
 
 LEXICON_RU: Lexicon = {
@@ -55,10 +59,10 @@ LEXICON_RU: Lexicon = {
              "Посмотреть что умею: /help\n\n"
              "По вопросам сюда: <tg-spoiler>@faralost</tg-spoiler>",
     'help': "/sakura - Фото Сакуры🐈\n"
-            "/kakura - Фото Какуры🐒\n"
+            "/kakura - Фото Какуры💩\n"
             "/fact - Интересный факт📰\n"
             "/quote - Цитата из Аниме🍥\n"
-            "/wedding - Фотка со свадьбы Эмира и Айжан🕺💃\n"
+            "/wedding - Фото со свадьбы Эмира и Айжан🕺💃\n"
             "/game - Сыграть в Угадай Число🎮\n\n"
             "-Начни запрос со слова <i><b>gpt</b></i> и тебе ответит нейронка OpenAI💻\n"
             "-Любое другое написанное вами мне я вам просто отзеркалю🪞",
@@ -93,13 +97,16 @@ LEXICON_RU: Lexicon = {
     'player': '<b>Игрок</b>',
     'stat': '📊<b>Статистика</b>📊',
     'stats': '📊<b>Статистика</b>📊',
-    'start_menu': 'Старт/Рестарт бота',
-    'help_menu': 'Помощь',
-    'fact_menu': 'Рандомный факт',
-    'quote_menu': 'Цитата из Aниме',
-    'game_menu': 'Угадай Число',
-    'stat_menu': 'Ваша Статистика',
-    'stats_menu': 'Общая Статистика',
+    'start_menu': 'Старт/Рестарт бот🤖',
+    'help_menu': 'Помощь❓',
+    'fact_menu': 'Рандомный факт📰',
+    'quote_menu': 'Цитата из Aниме💬',
+    'game_menu': 'Угадай Число🎮',
+    'stat_menu': 'Ваша Статистика📊',
+    'stats_menu': 'Общая Статистика📊',
+    'sakura': 'Фото Сакуры🐈',
+    'kakura': 'Фото Какуры💩',
+    'wedding': 'Фото со свадьбы🕺💃',
     'canceled_game': 'Вы вышли из игры😔 Если захотите сыграть снова, дайте знать😉',
     'not_playing': 'Мы с вами не играем😅 Может, сыграем разок?',
     'we_are_playing': 'Пока мы в игре я могу реагировать только на числа от <b>1</b> до <b>100</b>🤓',
@@ -118,4 +125,5 @@ LEXICON_RU: Lexicon = {
                      f'/stat - Ваша статистика📊\n'
                      f'/stats - Общая статистика📊\n\n'
                      f'<b>Мое число было</b> ',
+    'sakura_caption': 'Бэнг! Бэнг! Бэнг! Сакура в здании!😺',
 }

@@ -6,8 +6,9 @@ from aiogram.types import Message, CallbackQuery
 from database.database import ALL_CHATS, add_chat_to_all_chats_db, update_all_chats_db
 from external_services.animechan import collect_quote, get_random_anime, TOP_ANIMES
 from external_services.api_ninjas import collect_fact
+from external_services.imagekit import get_random_photo_url
 from external_services.openai import get_openai_response
-from keyboards.keyboards import fact_keyboard, quote_keyboard
+from keyboards.keyboards import fact_keyboard, quote_keyboard, photos_keyboard
 from lexicon.lexicon_ru import LEXICON_RU
 
 
@@ -52,6 +53,23 @@ async def process_chat_gpt_command(message: Message):
     await message.reply(response.choices[0].text)
 
 
+async def process_sakura_command(message: Message):
+    await message.reply_photo(
+        f'{get_random_photo_url("sakura")}',
+        caption=LEXICON_RU['sakura_caption'],
+        reply_markup=photos_keyboard
+    )
+
+
+async def process_more_sakura_press(callback: CallbackQuery):
+    await callback.answer()
+    await callback.message.reply_photo(
+        f'{get_random_photo_url("sakura")}',
+        caption=LEXICON_RU['sakura_caption'],
+        reply_markup=photos_keyboard
+    )
+
+
 def register_user_handlers(dp: Dispatcher):
     dp.register_message_handler(process_start_command, commands='start')
     dp.register_message_handler(process_help_command, commands='help')
@@ -60,3 +78,5 @@ def register_user_handlers(dp: Dispatcher):
     dp.register_message_handler(process_quote_command, commands='quote')
     dp.register_callback_query_handler(process_more_quote_press, text='more_quote')
     dp.register_message_handler(process_chat_gpt_command, Text(startswith=['gpt', 'chatgpt'], ignore_case=True))
+    dp.register_message_handler(process_sakura_command, commands='sakura')
+    dp.register_callback_query_handler(process_more_sakura_press, text='more_sakura')

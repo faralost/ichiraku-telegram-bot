@@ -12,5 +12,8 @@ async def set_main_menu(dp: Dispatcher):
         types.BotCommand(command='/game', description=LEXICON_RU['game_menu']),
         types.BotCommand(command='/stat', description=LEXICON_RU['stat_menu']),
         types.BotCommand(command='/stats', description=LEXICON_RU['stats_menu']),
+        types.BotCommand(command='/sakura', description=LEXICON_RU['sakura']),
+        types.BotCommand(command='/kakura', description=LEXICON_RU['kakura']),
+        types.BotCommand(command='/wedding', description=LEXICON_RU['wedding']),
     ]
     await dp.bot.set_my_commands(main_menu_commands)
