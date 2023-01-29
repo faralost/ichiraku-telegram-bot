@@ -14,6 +14,7 @@ This is a Telegram bot that I wrote for our chat with friends to have fun by int
 
 ## Scheduled Tasks
 - **Good morning**: Every morning, Bishkek time, the bot wishes good morning and sends the weather of those cities where my friends live.
+- **Birthdays check**: The bot checks my friends birthdays and reminds the chat about them.
 
 ## How to use
 1. Search for the bot on Telegram by its username (Ichiraku Bot) or invite it to a group chat using the link: [t.me/kg_ichiraku_bot](https://t.me/kg_ichiraku_bot)
