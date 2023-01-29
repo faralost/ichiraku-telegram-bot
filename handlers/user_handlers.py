@@ -5,7 +5,7 @@ from aiogram.types import Message, CallbackQuery
 from database.database import ALL_CHATS, add_chat_to_all_chats_db, update_all_chats_db
 from external_services.animechan import collect_quote, get_random_anime, TOP_ANIMES
 from external_services.api_ninjas import collect_fact
-from external_services.imagekit import get_random_photo_url
+from external_services.imagekit import get_random_photo_url, ImageKitFolder
 from external_services.openai import get_openai_response
 from keyboards.keyboards import fact_keyboard, quote_keyboard, photos_keyboard
 from lexicon.lexicon_ru import LEXICON_RU
@@ -54,7 +54,7 @@ async def process_chat_gpt_command(message: Message):
 
 async def process_sakura_command(message: Message):
     await message.reply_photo(
-        f'{get_random_photo_url("sakura")}',
+        f'{get_random_photo_url(ImageKitFolder.SAKURA)}',
         caption=LEXICON_RU['sakura_caption'],
         reply_markup=photos_keyboard
     )
@@ -63,7 +63,7 @@ async def process_sakura_command(message: Message):
 async def process_more_sakura_press(callback: CallbackQuery):
     await callback.answer()
     await callback.message.reply_photo(
-        f'{get_random_photo_url("sakura")}',
+        f'{get_random_photo_url(ImageKitFolder.SAKURA)}',
         caption=LEXICON_RU['sakura_caption'],
         reply_markup=photos_keyboard
     )
@@ -71,7 +71,7 @@ async def process_more_sakura_press(callback: CallbackQuery):
 
 async def process_kakura_command(message: Message):
     await message.reply_photo(
-        f'{get_random_photo_url("kakura")}',
+        f'{get_random_photo_url(ImageKitFolder.KAKURA)}',
         caption=LEXICON_RU['kakura_caption'],
         reply_markup=photos_keyboard
     )
@@ -80,7 +80,7 @@ async def process_kakura_command(message: Message):
 async def process_more_kakura_press(callback: CallbackQuery):
     await callback.answer()
     await callback.message.reply_photo(
-        f'{get_random_photo_url("kakura")}',
+        f'{get_random_photo_url(ImageKitFolder.KAKURA)}',
         caption=LEXICON_RU['kakura_caption'],
         reply_markup=photos_keyboard
     )
@@ -88,7 +88,7 @@ async def process_more_kakura_press(callback: CallbackQuery):
 
 async def process_wedding_command(message: Message):
     await message.reply_photo(
-        f'{get_random_photo_url("wedding")}',
+        f'{get_random_photo_url(ImageKitFolder.WEDDING)}',
         caption=LEXICON_RU['wedding_caption'],
         reply_markup=photos_keyboard
     )
@@ -97,7 +97,7 @@ async def process_wedding_command(message: Message):
 async def process_more_wedding_press(callback: CallbackQuery):
     await callback.answer()
     await callback.message.reply_photo(
-        f'{get_random_photo_url("wedding")}',
+        f'{get_random_photo_url(ImageKitFolder.WEDDING)}',
         caption=LEXICON_RU['wedding_caption'],
         reply_markup=photos_keyboard
     )
