@@ -68,13 +68,13 @@ LEXICON_RU: Lexicon = {
     'smile': '\n😁<i>улыбок тебе дед мокар</i>😁',
     'more_fact': 'Хочу еще факт!📰',
     'more_quote': 'Хочу еще цитату!💬',
-    'quote_of_the_day': "*Цитата дня из Аниме* 💬\n\n",
+    'quote_of_the_day': "<b>Цитата дня из Аниме</b> 💬\n\n",
     'fact_of_the_day': "*Рандомный факт дня* 📰\n\n",
     'anime': "Аниме",
     'character': "Персонаж",
     'min_temp': "Мин",
     'max_temp': "Макс",
-    'good_morning': f'<b>Доброе утро! Отличного Вам дня!</b>{random.choice(EMOJIS)}\n\n',
+    'good_morning': f'<b>Доброе утро! Отличного дня!</b>{random.choice(EMOJIS)}\n\n',
     'todays_weather': "🌍<i>Погода на сегодня</i>🌏\n\n",
     'birthday_text': "<b>УРА! ПОЗДРАВЛЯЮ!🥳\n\n"
                      "Сегодня день рождения у...</b>🥁(<i>барабанная дробь...</i>)\n\n",
@@ -121,8 +121,8 @@ LEXICON_RU: Lexicon = {
                      '/stat - Ваша статистика📊\n'
                      '/stats - Общая статистика📊\n\n'
                      '<b>Мое число было</b> ',
-    'sakura_caption': 'Бэнг! Бэнг! Бэнг! Сакура в здании!😺',
-    'kakura_caption': 'Бэнг! Бэнг! Бэнг! Kакура в здании!😽',
+    'sakura_caption': 'Бэнг! Бэнг! Сакура в здании!😺',
+    'kakura_caption': 'Бэнг! Бэнг! Kакура в здании!😽',
     'wedding_caption': 'Какой прекрасный день!💃🕺',
     'test': 'тест',
 }

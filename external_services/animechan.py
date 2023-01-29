@@ -65,7 +65,7 @@ async def collect_quote(anime_title: str):
 
 
 def get_quote_text(quote: AnimeQuote) -> str:
-    text = f'{LEXICON_RU["anime"]}: <b>{quote.anime}</b>\n'
+    text = f'{LEXICON_RU["anime"]}: {quote.anime}\n'
     text += f'{LEXICON_RU["character"]}: <b>{quote.character} ©</b>\n\n'
     text += f'- <b>"{quote.quote}"</b>'
     return text
