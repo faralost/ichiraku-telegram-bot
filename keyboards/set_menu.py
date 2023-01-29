@@ -1,6 +1,6 @@
 from aiogram import Dispatcher, types
 
-from lexicon.lexicon_ru import LEXICON_RU
+from lexicon.lexicon_ru import LEXICON_RU, LEXICON_RU_INLINE_KB
 
 
 async def set_main_menu(dp: Dispatcher):
@@ -12,8 +12,8 @@ async def set_main_menu(dp: Dispatcher):
         types.BotCommand(command='/game', description=LEXICON_RU['game_menu']),
         types.BotCommand(command='/stat', description=LEXICON_RU['stat_menu']),
         types.BotCommand(command='/stats', description=LEXICON_RU['stats_menu']),
-        types.BotCommand(command='/sakura', description=LEXICON_RU['sakura']),
-        types.BotCommand(command='/kakura', description=LEXICON_RU['kakura']),
-        types.BotCommand(command='/wedding', description=LEXICON_RU['wedding']),
+        types.BotCommand(command='/sakura', description=LEXICON_RU_INLINE_KB['sakura']),
+        types.BotCommand(command='/kakura', description=LEXICON_RU_INLINE_KB['kakura']),
+        types.BotCommand(command='/wedding', description=LEXICON_RU_INLINE_KB['wedding']),
     ]
     await dp.bot.set_my_commands(main_menu_commands)

@@ -1,17 +1,21 @@
 from aiogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 
-from lexicon.lexicon_ru import LEXICON_RU
+from lexicon.lexicon_ru import LEXICON_RU_INLINE_KB
 
-fact_keyboard = InlineKeyboardMarkup()
-fact_button = InlineKeyboardButton(text=LEXICON_RU['more_fact'], callback_data='more_fact')
-fact_keyboard.add(fact_button)
 
-quote_keyboard = InlineKeyboardMarkup()
-quote_button = InlineKeyboardButton(text=LEXICON_RU['more_quote'], callback_data='more_quote')
-quote_keyboard.add(quote_button)
+def create_inline_kb(row_width: int, *args, **kwargs) -> InlineKeyboardMarkup:
+    inline_kb: InlineKeyboardMarkup = InlineKeyboardMarkup(row_width=row_width)
+    if args:
+        [
+            inline_kb.insert(
+                InlineKeyboardButton(text=LEXICON_RU_INLINE_KB[button], callback_data=button))
+            for button in args
+        ]
+    if kwargs:
+        [inline_kb.insert(InlineKeyboardButton(text=text, callback_data=button)) for button, text in kwargs.items()]
+    return inline_kb
 
-photos_keyboard = InlineKeyboardMarkup(row_width=2)
-sakura_button = InlineKeyboardButton(text=LEXICON_RU['sakura'], callback_data='more_sakura')
-kakura_button = InlineKeyboardButton(text=LEXICON_RU['kakura'], callback_data='more_kakura')
-wedding_button = InlineKeyboardButton(text=LEXICON_RU['wedding'], callback_data='more_wedding')
-photos_keyboard.add(sakura_button, kakura_button, wedding_button)
+
+fact_keyboard = create_inline_kb(1, 'more_fact')
+quote_keyboard = create_inline_kb(1, 'more_quote')
+photos_keyboard = create_inline_kb(2, 'sakura', 'kakura', 'wedding')
