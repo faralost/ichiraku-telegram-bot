@@ -7,7 +7,8 @@ from external_services.animechan import collect_quote, get_random_anime, TOP_ANI
 from external_services.api_ninjas import collect_fact
 from external_services.imagekit import get_random_photo_url, ImageKitFolder
 from external_services.openai import get_openai_response
-from keyboards.keyboards import fact_keyboard, quote_keyboard, photos_keyboard
+from external_services.openweather import collect_weather
+from keyboards.keyboards import fact_keyboard, quote_keyboard, photos_keyboard, weather_keyboard
 from lexicon.lexicon_ru import LEXICON_RU
 
 
@@ -103,6 +104,12 @@ async def process_more_wedding_press(callback: CallbackQuery):
     )
 
 
+async def process_weather_press(callback: CallbackQuery):
+    await callback.answer()
+    text = LEXICON_RU['todays_weather'] + await collect_weather()
+    await callback.message.reply(text=text, reply_markup=weather_keyboard)
+
+
 def register_user_handlers(dp: Dispatcher):
     dp.register_message_handler(process_start_command, commands='start')
     dp.register_message_handler(process_help_command, commands='help')
@@ -117,3 +124,4 @@ def register_user_handlers(dp: Dispatcher):
     dp.register_callback_query_handler(process_more_kakura_press, text='kakura')
     dp.register_message_handler(process_wedding_command, commands='wedding')
     dp.register_callback_query_handler(process_more_wedding_press, text='wedding')
+    dp.register_callback_query_handler(process_weather_press, text='weather')

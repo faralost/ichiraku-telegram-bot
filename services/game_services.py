@@ -81,8 +81,7 @@ def get_stats_text(sorted_users: list) -> str:
     from lexicon.lexicon_ru import LEXICON_RU
     stats = f"{LEXICON_RU['stats']}\n\n"
     for i in range(len(sorted_users)):
-        stats += f'{i + 1} ' \
-                 f'@{sorted_users[i]["username"]} - <i>побед</i>: {round(sorted_users[i]["win_rate"])}%\n'
+        stats += f'{i + 1} @{sorted_users[i]["username"]} побед: {round(sorted_users[i]["win_rate"])}%\n'
     return stats
 
 

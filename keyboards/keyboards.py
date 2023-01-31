@@ -18,4 +18,5 @@ def create_inline_kb(row_width: int, *args, **kwargs) -> InlineKeyboardMarkup:
 
 fact_keyboard = create_inline_kb(1, 'more_fact')
 quote_keyboard = create_inline_kb(1, 'more_quote')
+weather_keyboard = create_inline_kb(1, 'weather')
 photos_keyboard = create_inline_kb(2, 'sakura', 'kakura', 'wedding')
