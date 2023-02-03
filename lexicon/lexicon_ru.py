@@ -44,6 +44,11 @@ class Lexicon(TypedDict):
     kakura_caption: str
     wedding_caption: str
     test: str
+    admin_hello: str
+    unauthorized: str
+    message: str
+    quit: str
+    sent: str
 
 
 LEXICON_RU: Lexicon = {
@@ -114,6 +119,12 @@ LEXICON_RU: Lexicon = {
     'kakura_caption': 'Бэнг! Бэнг! Kакура в здании!😽',
     'wedding_caption': 'Какой прекрасный день!💃🕺',
     'test': 'тест',
+    'admin_hello': 'Добро пожаловать в Админ-Панель! Выберите действие на клавиатуре',
+    'unauthorized': 'У вас нет доступа сюда!',
+    'message': 'Напишите текст сообщения для Ичираку\n'
+               'Напишите "<b>нет</b>" для отмены',
+    'quit': 'Вы вышли!',
+    'sent': 'Сообщение отправлено!'
 }
 
 LEXICON_RU_CITIES = {

@@ -1,4 +1,4 @@
-from aiogram.types import InlineKeyboardMarkup, InlineKeyboardButton
+from aiogram.types import InlineKeyboardMarkup, InlineKeyboardButton, ReplyKeyboardMarkup
 
 from lexicon.lexicon_ru import LEXICON_RU_INLINE_KB
 
@@ -20,3 +20,6 @@ fact_keyboard = create_inline_kb(1, 'more_fact')
 quote_keyboard = create_inline_kb(1, 'more_quote')
 weather_keyboard = create_inline_kb(1, 'weather')
 photos_keyboard = create_inline_kb(2, 'sakura', 'kakura', 'wedding')
+
+admin_kb = ReplyKeyboardMarkup(resize_keyboard=True)
+admin_kb.add(InlineKeyboardButton(text="Сообщение в Ичираку"))
