@@ -6,6 +6,7 @@ from aiogram.types import Message
 from config_data import config
 from keyboards.keyboards import admin_kb
 from lexicon.lexicon_ru import LEXICON_RU
+from services.admin_services import get_bot_stats
 
 
 class Dialog(StatesGroup):
@@ -35,7 +36,12 @@ async def start_ichiraku_message(message: Message, state: FSMContext):
         await state.finish()
 
 
+async def bot_stats(message: Message):
+    await message.reply(text=get_bot_stats())
+
+
 def register_admin_handlers(dp: Dispatcher):
     dp.register_message_handler(process_admin_command, commands='admin')
     dp.register_message_handler(ichiraku_message, content_types=['text'], text=LEXICON_RU['ichiraku_message'])
+    dp.register_message_handler(bot_stats, content_types=['text'], text=LEXICON_RU['admin_stats'])
     dp.register_message_handler(start_ichiraku_message, state=Dialog.ichiraku_message)

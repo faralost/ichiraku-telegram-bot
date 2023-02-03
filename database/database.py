@@ -33,3 +33,7 @@ def add_chat_to_all_chats_db(chat_id: int) -> None:
 def update_all_chats_db(chats: set[int]) -> None:
     with open('database/pickle_db', 'wb') as f:
         pickle.dump(chats, f)
+
+
+def get_all_chats_users_count() -> int:
+    return len(ALL_CHATS)
