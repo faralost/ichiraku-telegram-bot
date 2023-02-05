@@ -12,3 +12,4 @@ pytest-mock==3.10.0
 mypy==0.991
 flake8==6.0.0
 types-pytz==2022.7.1.0
+sentry-sdk==1.14.0

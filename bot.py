@@ -1,6 +1,8 @@
 import asyncio
 import logging
 
+import sentry_sdk
+from sentry_sdk.integrations.logging import LoggingIntegration
 from aiogram import Bot, Dispatcher, executor
 from aiogram.contrib.fsm_storage.memory import MemoryStorage
 
@@ -18,7 +20,16 @@ logging.basicConfig(
     format='%(filename)s:%(lineno)d #%(levelname)-8s [%(asctime)s] - %(name)s - %(message)s'
 )
 
+sentry_logging = LoggingIntegration(level=logging.INFO, event_level=logging.ERROR)
+sentry_sdk.init(
+    dsn=config.SENTRY_DSN,
+    integrations=[sentry_logging],
+    traces_sample_rate=1.0,
+    attach_stacktrace=True,
+)
+
 storage = MemoryStorage()
+
 bot: Bot = Bot(token=config.BOT_API_TOKEN, parse_mode='HTML')
 dp: Dispatcher = Dispatcher(bot, storage=storage)
 
