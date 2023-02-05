@@ -16,3 +16,4 @@ media
 pickle_db
 .pytest_cashe
 pickle_game_db
+.coverage

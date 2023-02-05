@@ -3,7 +3,14 @@ python-dotenv==0.21.0
 httpx==0.23.1
 mtranslate==1.8
 aiogram==2.24
+pytest==7.2.0
 pytz==2022.7
 openai==0.26.3
 imagekitio==3.0.1
+pytest-asyncio==0.20.3
+pytest-mock==3.10.0
+mypy==0.991
+flake8==6.0.0
+types-pytz==2022.7.1.0
 sentry-sdk==1.14.0
+pytest-cov==4.0.0
