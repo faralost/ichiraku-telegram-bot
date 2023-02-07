@@ -11,7 +11,7 @@ openai.api_key = config.OPENAI_API_KEY
 
 def get_openai_response(text):
     try:
-        return openai.Completion.create(
+        response = openai.Completion.create(
             engine='text-davinci-003',
             prompt=f'{text}',
             max_tokens=1024,
@@ -19,6 +19,7 @@ def get_openai_response(text):
             stop=None,
             temperature=0.5
         )
+        return response['choices'][0]['text']
     except OpenAIError as e:
         logging.error(e)
         return ERROR_MESSAGES_RU['openai_error']

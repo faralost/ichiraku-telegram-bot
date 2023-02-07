@@ -35,3 +35,4 @@ docker compose up --build -d
 - [ApiNinjas](https://api-ninjas.com/): To get facts.
 - [OpenWeather](https://openweathermap.org/): To get weather.
 - [Imagekit](https://imagekit.io/): To store photos.
+- [Sentry](https://sentry.io/): To monitor logs.

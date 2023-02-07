@@ -17,7 +17,7 @@ from keyboards.set_menu import set_main_menu
 logger = logging.getLogger(__name__)
 logging.basicConfig(
     level=logging.INFO,
-    format='%(filename)s:%(lineno)d #%(levelname)-8s [%(asctime)s] - %(name)s - %(message)s'
+    format='[%(asctime)s] #%(levelname)s - %(filename)s:%(lineno)d %(name)s - %(message)s'
 )
 
 sentry_logging = LoggingIntegration(level=logging.INFO, event_level=logging.ERROR)
@@ -27,6 +27,7 @@ sentry_sdk.init(
     traces_sample_rate=1.0,
     attach_stacktrace=True,
 )
+
 
 storage = MemoryStorage()
 

@@ -50,7 +50,7 @@ async def process_chat_gpt_command(message: Message):
     await message.answer_chat_action('typing')
     text = message.text.split(' ', 1)[1]
     response = get_openai_response(text)
-    await message.reply(response.choices[0].text)
+    await message.reply(response)
 
 
 async def process_sakura_command(message: Message):

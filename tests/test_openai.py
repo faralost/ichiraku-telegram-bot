@@ -13,7 +13,7 @@ def mock_response():
 def test_get_openai_response(mocker, mock_response):
     mocker.patch.object(openai.Completion, 'create', return_value=mock_response)
     response = get_openai_response('Test prompt')
-    assert response == mock_response
+    assert response == mock_response['choices'][0]['text']
 
 
 def test_get_openai_response_error(mocker):
