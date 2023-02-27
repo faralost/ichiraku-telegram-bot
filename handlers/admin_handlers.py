@@ -67,4 +67,3 @@ def register_admin_handlers(dp: Dispatcher):
     dp.register_message_handler(start_ichiraku_message, state=Dialog.ichiraku_message)
     dp.register_message_handler(start_ichiraku_photo, content_types='photo', state=Dialog.ichiraku_photo)
     dp.register_message_handler(warning_not_photo, content_types='any', state=Dialog.ichiraku_photo)
-
