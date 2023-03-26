@@ -3,11 +3,11 @@ version: "3.8"
 services:
   tg_bot:
     build: .
-    restart: always
+    restart: on-failure
     command: sh -c "python bot.py"
     volumes:
       - .:/usr/src/app
     ports:
-      - "8000:8000"
+      - "8001:8001"
     env_file:
       - .env
