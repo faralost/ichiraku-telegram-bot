@@ -4,8 +4,7 @@ from aiogram import Bot
 from aiogram.types import InlineKeyboardMarkup
 from aiogram.utils.exceptions import Unauthorized, BadRequest
 
-from database.database import update_all_chats_db, BIRTHDAYS
-from lexicon.lexicon_ru import LEXICON_RU
+from database.database import update_all_chats_db
 
 
 async def send_to_all_chats(chats: set[int], bot: Bot, text: str, reply_markup: InlineKeyboardMarkup = None):
@@ -16,7 +15,3 @@ async def send_to_all_chats(chats: set[int], bot: Bot, text: str, reply_markup: 
             logging.error(e)
             chats.remove(chat_id)
             update_all_chats_db(chats)
-
-
-async def get_birthday_text(birthday: str) -> str:
-    return LEXICON_RU['birthday_text'] + f'<tg-spoiler><b>{BIRTHDAYS[birthday]}</b></tg-spoiler>'

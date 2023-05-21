@@ -17,6 +17,7 @@ class Lexicon(TypedDict):
     good_morning: str
     todays_weather: str
     birthday_text: str
+    apple_music_notification_text: str
     game: str
     not_registered_for_game: str
     games_played: str
@@ -81,6 +82,13 @@ LEXICON_RU: Lexicon = {
     'todays_weather': "🌍<i>Погода на сегодня</i>🌏\n\n",
     'birthday_text': "<b>УРА! ПОЗДРАВЛЯЮ!🥳\n\n"
                      "Сегодня день рождения у...</b>🥁(<i>барабанная дробь...</i>)\n\n",
+    "apple_music_notification_text": "<b>СРОЧНОЕ ОБЪЯВЛЕНИЕ</b> ‼️\n\n"
+                                     "<i>Уважаемые, \n\n"
+                                     "Нургиза @myblueoceanfloor\n"
+                                     "Карина @carinafcb\n"
+                                     "Фархатжан @faralost</i> \n\n"
+                                     "Не забудьте пожалуйста перевести деньги Apple Music 🎧 "
+                                     "<i>уважаемому Эмиру</i> за месяц ",
     'game': '<b>Правила игры:</b>\n\n'
             'Я загадываю число от <b>1</b> до <b>100</b>, а вам нужно его угадать🤔\n'
             'У вас есть <b>5</b> попыток\n\n'
@@ -146,6 +154,21 @@ LEXICON_RU_CITIES = {
     'Asia/Bishkek': "Бишкек",
     'Asia/Almaty': "Алматы",
     'Asia/Novosibirsk': "Новосибирск",
+}
+
+LEXICON_RU_MONTHS = {
+    'January': "Январь",
+    'February': "Февраль",
+    'March': "Март",
+    'April': "Апрель",
+    'May': "Май",
+    'June': "Июнь",
+    'July': "Июль",
+    'August': "Август",
+    'September': "Сентябрь",
+    'October': "Октябрь",
+    'November': "Ноябрь",
+    'December': "Декабрь",
 }
 
 LEXICON_RU_INLINE_KB = {
