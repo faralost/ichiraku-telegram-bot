@@ -15,6 +15,8 @@ from lexicon.helpers import get_birthday_text, get_apple_music_notification_text
 from lexicon.lexicon_ru import LEXICON_RU
 from services.services import send_to_all_chats
 
+FIRST_DAY_OF_MONTH = 1
+
 
 async def send_good_morning(bot: Bot):
     text = LEXICON_RU['good_morning'] + LEXICON_RU['todays_weather']
@@ -43,7 +45,7 @@ async def check_birthdays(bot: Bot):
 async def check_apple_music_notification(bot: Bot):
     today = datetime.datetime.now(timezone('Asia/Bishkek'))
     month_name = today.strftime("%B")
-    if today.day == 21:
+    if today.day == FIRST_DAY_OF_MONTH:
         text = await get_apple_music_notification_text(month_name)
         await bot.send_message(ICHIRAKU_CHAT_ID, text)
 
