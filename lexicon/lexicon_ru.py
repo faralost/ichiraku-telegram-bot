@@ -153,7 +153,6 @@ LEXICON_RU: Lexicon = {
 LEXICON_RU_CITIES = {
     'Asia/Bishkek': "Бишкек",
     'Asia/Almaty': "Алматы",
-    'Asia/Novosibirsk': "Новосибирск",
 }
 
 LEXICON_RU_MONTHS = {

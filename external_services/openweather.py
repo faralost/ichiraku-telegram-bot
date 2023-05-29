@@ -12,7 +12,6 @@ from lexicon.lexicon_ru import LEXICON_RU, LEXICON_RU_CITIES
 CITIES = {
     'bishkek': {'lat': 42.882004, 'lon': 74.582748},
     'almaty': {'lat': 43.238949, 'lon': 76.889709},
-    'novosibirsk': {'lat': 55.018803, 'lon': 82.933952},
 }
 
 WEATHER_ID_EMOJIS = {
