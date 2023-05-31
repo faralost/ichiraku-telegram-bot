@@ -7,4 +7,8 @@ async def get_birthday_text(birthday: str) -> str:
 
 
 async def get_apple_music_notification_text(month_name: str) -> str:
-    return LEXICON_RU['apple_music_notification_text'] + f'<b>{LEXICON_RU_MONTHS[month_name]}</b>'
+    return (
+            LEXICON_RU['apple_music_notification_text']
+            + f'<b>{LEXICON_RU_MONTHS[month_name]}</b>'
+            + LEXICON_RU['apple_music_extra_text']
+    )

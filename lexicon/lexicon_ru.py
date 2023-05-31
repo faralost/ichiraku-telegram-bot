@@ -18,6 +18,7 @@ class Lexicon(TypedDict):
     todays_weather: str
     birthday_text: str
     apple_music_notification_text: str
+    apple_music_extra_text: str
     game: str
     not_registered_for_game: str
     games_played: str
@@ -86,9 +87,11 @@ LEXICON_RU: Lexicon = {
                                      "<i>Уважаемые, \n\n"
                                      "Нургиза @myblueoceanfloor\n"
                                      "Карина @carinafcb\n"
+                                     "Сайкал @abykaevasaik\n"
                                      "Фархатжан @faralost</i> \n\n"
                                      "Не забудьте пожалуйста перевести деньги Apple Music 🎧 "
                                      "<i>уважаемому Эмиру</i> за месяц ",
+    "apple_music_extra_text": "\n\n<tg-spoiler>Кто не скинет тот подвел Ренгоку🎇</tg-spoiler>",
     'game': '<b>Правила игры:</b>\n\n'
             'Я загадываю число от <b>1</b> до <b>100</b>, а вам нужно его угадать🤔\n'
             'У вас есть <b>5</b> попыток\n\n'
