@@ -32,7 +32,7 @@ class AnimeQuote:
 
 
 async def get_anime_quote(anime_title: str) -> dict[str, str]:
-    url = f'http://animechan.melosh.space/random/anime?title={anime_title}'
+    url = f'https://animechan.xyz/api/random/anime?title={anime_title}'
     async with httpx.AsyncClient() as client:
         try:
             response = await client.get(url)
