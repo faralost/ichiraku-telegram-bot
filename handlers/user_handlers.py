@@ -3,7 +3,6 @@ from aiogram.dispatcher.filters import Text
 from aiogram.types import Message, CallbackQuery
 
 from database.database import ALL_CHATS, add_chat_to_all_chats_db, update_all_chats_db
-from external_services.animechan import get_random_anime, TOP_ANIMES
 from external_services.api_ninjas import collect_fact
 from external_services.imagekit import get_random_photo_url, ImageKitFolder
 from external_services.openai import get_openai_response
