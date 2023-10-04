@@ -3,11 +3,12 @@ from aiogram.dispatcher.filters import Text
 from aiogram.types import Message, CallbackQuery
 
 from database.database import ALL_CHATS, add_chat_to_all_chats_db, update_all_chats_db
-from external_services.animechan import collect_quote, get_random_anime, TOP_ANIMES
+from external_services.animechan import get_random_anime, TOP_ANIMES
 from external_services.api_ninjas import collect_fact
 from external_services.imagekit import get_random_photo_url, ImageKitFolder
 from external_services.openai import get_openai_response
 from external_services.openweather import collect_weather
+from external_services.waifu import collect_quote
 from keyboards.keyboards import fact_keyboard, quote_keyboard, photos_keyboard, weather_keyboard
 from lexicon.lexicon_ru import LEXICON_RU
 
@@ -36,13 +37,13 @@ async def process_more_fact_press(callback: CallbackQuery):
 
 async def process_quote_command(message: Message):
     await message.answer_chat_action('typing')
-    quote = await collect_quote(get_random_anime(TOP_ANIMES))
+    quote = await collect_quote()
     await message.reply(text=quote, reply_markup=quote_keyboard)
 
 
 async def process_more_quote_press(callback: CallbackQuery):
     await callback.answer()
-    quote = await collect_quote(get_random_anime(TOP_ANIMES))
+    quote = await collect_quote()
     await callback.message.reply(text=quote, reply_markup=quote_keyboard)
 
 

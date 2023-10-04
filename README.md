@@ -31,7 +31,8 @@ docker compose up --build -d
 
 ## Used External Services
 - [OpenAi](https://openai.com/): Integration of chatGPT.
-- [Animechan](https://animechan.vercel.app/): To get Anime quotes.
+- [Animechan](https://animechan.vercel.app/): To get Anime quotes.(Currently is down)
+- [Waifu](https://waifu.it/): To get Anime quotes.
 - [ApiNinjas](https://api-ninjas.com/): To get facts.
 - [OpenWeather](https://openweathermap.org/): To get weather.
 - [Imagekit](https://imagekit.io/): To store photos.
