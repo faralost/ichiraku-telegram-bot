@@ -17,6 +17,7 @@ class Lexicon(TypedDict):
     good_morning: str
     todays_weather: str
     birthday_text: str
+    bot_birthday_text: str
     apple_music_notification_text: str
     apple_music_extra_text: str
     game: str
@@ -83,6 +84,9 @@ LEXICON_RU: Lexicon = {
     'todays_weather': "🌍<i>Погода на сегодня</i>🌏\n\n",
     'birthday_text': "<b>УРА! ПОЗДРАВЛЯЮ!🥳\n\n"
                      "Сегодня день рождения у...</b>🥁(<i>барабанная дробь...</i>)\n\n",
+    'bot_birthday_text': '<b>Ура! Сегодня мой день рождения🥳\n\n'
+                         'Я Вас всех люблю и обнимаю🫂\n\n'
+                         'Годиков исполнилось: </b>',
     "apple_music_notification_text": "<b>СРОЧНОЕ ОБЪЯВЛЕНИЕ</b> ‼️\n\n"
                                      "<i>Уважаемые, \n\n"
                                      "Нургиза @myblueoceanfloor\n"

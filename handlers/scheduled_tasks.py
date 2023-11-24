@@ -12,7 +12,7 @@ from external_services.api_ninjas import collect_fact
 from external_services.openweather import collect_weather
 from external_services.waifu import collect_quote
 from keyboards.keyboards import fact_keyboard, quote_keyboard, weather_keyboard
-from lexicon.helpers import get_birthday_text, get_apple_music_notification_text
+from lexicon.helpers import get_birthday_text, get_apple_music_notification_text, get_bot_birthday_text
 from lexicon.lexicon_ru import LEXICON_RU
 from services.services import send_to_all_chats
 
@@ -43,6 +43,19 @@ async def check_birthdays(bot: Bot):
         await bot.send_message(ICHIRAKU_CHAT_ID, text)
 
 
+async def send_bot_birthday(bot: Bot):
+    today = datetime.datetime.now(timezone('Asia/Bishkek'))
+    today_str = today.strftime('%d-%m')
+    if today_str == '30-12':
+        years_old = datetime.datetime.now().year - datetime.datetime(2022, 12, 30).year
+        text = await get_bot_birthday_text(years_old)
+        await bot.send_photo(
+            ICHIRAKU_CHAT_ID,
+            'https://ik.imagekit.io/faralost/bot_birthday.jpg'
+        )
+        await bot.send_message(ICHIRAKU_CHAT_ID, text)
+
+
 async def check_apple_music_notification(bot: Bot):
     today = datetime.datetime.now(timezone('Asia/Bishkek'))
     month_name = today.strftime("%B")
@@ -57,6 +70,7 @@ async def scheduler(bot: Bot):
     aioschedule.every().day.at('12:00').do(send_fact, bot)
     aioschedule.every().day.at('18:01').do(check_birthdays, bot)
     aioschedule.every().day.at('03:00').do(check_apple_music_notification, bot)
+    aioschedule.every().day.at('04:00').do(send_bot_birthday, bot)
 
     while True:
         await aioschedule.run_pending()

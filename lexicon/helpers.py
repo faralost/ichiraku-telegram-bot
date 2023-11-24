@@ -6,6 +6,10 @@ async def get_birthday_text(birthday: str) -> str:
     return LEXICON_RU['birthday_text'] + f'<tg-spoiler><b>{BIRTHDAYS[birthday]}</b></tg-spoiler>'
 
 
+async def get_bot_birthday_text(years: int) -> str:
+    return LEXICON_RU['bot_birthday_text'] + f'<tg-spoiler><b>🤖 {years} 🤖</b></tg-spoiler>'
+
+
 async def get_apple_music_notification_text(month_name: str) -> str:
     return (
             LEXICON_RU['apple_music_notification_text']
