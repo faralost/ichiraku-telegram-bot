@@ -10,7 +10,7 @@ from external_services.animechan import AnimeQuote, get_quote_text
 
 
 async def get_anime_quote() -> dict[str, str]:
-    url = f'https://waifu.it/api/quote'
+    url = f'https://waifu.it/api/v4/quote'
     async with httpx.AsyncClient() as client:
         try:
             response = await client.get(url, headers={"Authorization": config.WAIFU_API_KEY})
