@@ -10,7 +10,7 @@ from database.database import ALL_CHATS, BIRTHDAYS
 
 from external_services.api_ninjas import collect_fact
 from external_services.openweather import collect_weather
-from external_services.waifu import collect_quote
+from external_services.animechan import collect_quote, get_random_anime, TOP_ANIMES
 from keyboards.keyboards import fact_keyboard, quote_keyboard, weather_keyboard
 from lexicon.helpers import get_birthday_text, get_apple_music_notification_text, get_bot_birthday_text
 from lexicon.lexicon_ru import LEXICON_RU
@@ -26,7 +26,7 @@ async def send_good_morning(bot: Bot):
 
 
 async def send_anime_quote(bot: Bot):
-    text = LEXICON_RU['quote_of_the_day'] + await collect_quote()
+    text = LEXICON_RU['quote_of_the_day'] + await collect_quote(get_random_anime(TOP_ANIMES))
     await send_to_all_chats(ALL_CHATS, bot, text, reply_markup=quote_keyboard)
 
 

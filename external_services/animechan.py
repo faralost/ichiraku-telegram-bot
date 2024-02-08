@@ -11,16 +11,15 @@ from lexicon.lexicon_ru import LEXICON_RU
 
 TOP_ANIMES = (
     'naruto',
-    'jujutsu',
-    'attack',
-    'slayer',
-    'haikyu',
-    'note',
-    'hunter',
-    'evangelion',
-    'brotherhood',
-    'jojo',
-    'punch',
+    'jujutsu_kaisen',
+    'attack_on_titan',
+    'demon_slayer',
+    'death_note',
+    'hunter_x_hunter',
+    'neon_genesis_evangelion',
+    'fullmetal_alchemist',
+    'jojo_s_bizarre_adventure',
+    'one_punch_man',
 )
 
 
