@@ -9,7 +9,7 @@ from errors.errors import NinjasAPIError
 
 
 async def get_fact() -> str:
-    url = 'https://api.api-ninjas.com/v1/facts?limit=1'
+    url = 'https://api.api-ninjas.com/v1/facts'
     async with httpx.AsyncClient() as client:
         try:
             response = await client.get(url, headers={'X-Api-Key': config.API_NINJAS_KEY})
