@@ -1,25 +1,28 @@
 import logging
 
-import openai
-from openai import OpenAIError
+from openai import OpenAIError, OpenAI
 
 from config_data import config
 from errors.error_messages import ERROR_MESSAGES_RU
 
-openai.api_key = config.OPENAI_API_KEY
+api_key = config.OPENAI_API_KEY
+
+client = OpenAI(api_key=api_key)
 
 
 def get_openai_response(text):
     try:
-        response = openai.Completion.create(
-            engine='text-davinci-003',
-            prompt=f'{text}',
-            max_tokens=1024,
-            n=1,
-            stop=None,
-            temperature=0.5
+        response = client.chat.completions.create(
+            messages=[
+                {
+                    "role": "system",
+                    "content": "You as assistant help users with their questions.",
+                },
+                {"role": "user", "content": text},
+            ],
+            model='gpt-3.5-turbo'
         )
-        return response['choices'][0]['text']
+        return response['choices'][0].message.content
     except OpenAIError as e:
         logging.error(e)
         return ERROR_MESSAGES_RU['openai_error']
