@@ -158,8 +158,9 @@ LEXICON_RU: Lexicon = {
 }
 
 LEXICON_RU_CITIES = {
-    'Asia/Bishkek': "Бишкек",
-    'Asia/Almaty': "Алматы",
+    '75.3015': "Токмок",
+    '74.5827': "Бишкек",
+    '76.8897': "Алматы",
 }
 
 LEXICON_RU_MONTHS = {

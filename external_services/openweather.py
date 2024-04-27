@@ -10,6 +10,7 @@ from errors.errors import OpenWeatherAPIError
 from lexicon.lexicon_ru import LEXICON_RU, LEXICON_RU_CITIES
 
 CITIES = {
+    'tokmok': {'lat': 42.84194, 'lon': 75.30149},
     'bishkek': {'lat': 42.882004, 'lon': 74.582748},
     'almaty': {'lat': 43.238949, 'lon': 76.889709},
 }
@@ -76,6 +77,8 @@ WEATHER_ID_EMOJIS = {
 @dataclass
 class OpenWeather:
     timezone: str
+    lat: float
+    lon: float
     min_temp: int
     max_temp: int
     description: str
@@ -105,6 +108,8 @@ async def get_openweather(lat: float, lon: float):
 async def parse_openweather(openweather: dict) -> OpenWeather:
     return OpenWeather(
         timezone=openweather['timezone'],
+        lat=openweather['lat'],
+        lon=openweather['lon'],
         min_temp=math.ceil(openweather['daily'][0]['temp']['min']),
         max_temp=math.ceil(openweather['daily'][0]['temp']['max']),
         description=openweather['daily'][0]['weather'][0]['description'],
@@ -115,7 +120,7 @@ async def parse_openweather(openweather: dict) -> OpenWeather:
 async def get_weather_text(lat: float, lon: float) -> str:
     openweather_response = await get_openweather(lat=lat, lon=lon)
     parsed_weather = await parse_openweather(openweather_response)
-    text = f'<b>{LEXICON_RU_CITIES[parsed_weather.timezone]}</b>\n' \
+    text = f'<b>{LEXICON_RU_CITIES[str(parsed_weather.lon)]}</b>\n' \
            f'{LEXICON_RU["min_temp"]}: {parsed_weather.min_temp}°, ' \
            f'{LEXICON_RU["max_temp"]}: {parsed_weather.max_temp}°, ' \
            f'{parsed_weather.description}{WEATHER_ID_EMOJIS[parsed_weather.weather_id]}\n\n'
