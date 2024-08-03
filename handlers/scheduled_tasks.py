@@ -9,6 +9,7 @@ from config_data.config import ICHIRAKU_CHAT_ID
 from database.database import ALL_CHATS, BIRTHDAYS
 
 from external_services.api_ninjas import collect_fact
+from external_services.fx import collect_currencies
 from external_services.openweather import collect_weather
 from external_services.animechan import collect_quote, get_random_anime, TOP_ANIMES
 from keyboards.keyboards import fact_keyboard, quote_keyboard, weather_keyboard
@@ -22,6 +23,7 @@ FIRST_DAY_OF_MONTH = 1
 async def send_good_morning(bot: Bot):
     text = LEXICON_RU['good_morning'] + LEXICON_RU['todays_weather']
     text += await collect_weather()
+    text += LEXICON_RU['currencies'] + await collect_currencies()
     await send_to_all_chats(ALL_CHATS, bot, text, reply_markup=weather_keyboard)
 
 

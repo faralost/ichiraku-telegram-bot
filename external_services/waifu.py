@@ -7,6 +7,7 @@ from config_data import config
 from errors.error_messages import ERROR_MESSAGES_RU
 from errors.errors import WaifuAPIError
 from external_services.animechan import AnimeQuote, get_quote_text
+from external_services.fx import get_currencies
 
 
 async def get_anime_quote() -> dict[str, str]:

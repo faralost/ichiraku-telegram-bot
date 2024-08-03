@@ -4,6 +4,7 @@ from aiogram.types import Message, CallbackQuery
 
 from database.database import ALL_CHATS, add_chat_to_all_chats_db, update_all_chats_db
 from external_services.api_ninjas import collect_fact
+from external_services.fx import collect_currencies
 from external_services.imagekit import get_random_photo_url, ImageKitFolder
 from external_services.openai import get_openai_response
 from external_services.openweather import collect_weather
@@ -107,6 +108,7 @@ async def process_more_wedding_press(callback: CallbackQuery):
 async def process_weather_press(callback: CallbackQuery):
     await callback.answer()
     text = LEXICON_RU['todays_weather'] + await collect_weather()
+    text += LEXICON_RU['currencies'] + await collect_currencies()
     await callback.message.reply(text=text, reply_markup=weather_keyboard)
 
 

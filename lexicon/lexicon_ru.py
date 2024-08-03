@@ -58,6 +58,7 @@ class Lexicon(TypedDict):
     admin_stats: str
     warning_not_photo: str
     just_photo: str
+    currencies: str
 
 
 LEXICON_RU: Lexicon = {
@@ -82,6 +83,7 @@ LEXICON_RU: Lexicon = {
     'max_temp': "Макс",
     'good_morning': f'<b>Доброе утро! Отличного дня!</b>{random.choice(EMOJIS)}\n\n',
     'todays_weather': "🌍<i>Погода на сегодня</i>🌏\n\n",
+    'currencies': "🤑<i>Валюты на сегодня</i>🤑\n\n",
     'birthday_text': "<b>УРА! ПОЗДРАВЛЯЮ!🥳\n\n"
                      "Сегодня день рождения у...</b>🥁(<i>барабанная дробь...</i>)\n\n",
     'bot_birthday_text': '<b>Ура! Сегодня мой день рождения🥳\n\n'

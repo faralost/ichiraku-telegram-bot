@@ -12,3 +12,7 @@ class WaifuAPIError(Exception):
 
 class OpenWeatherAPIError(Exception):
     pass
+
+
+class FxAPIError(Exception):
+    pass
